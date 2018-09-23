@@ -22,6 +22,7 @@ export const CTAButton = styled.button`
   margin-top: 50px;
   background: transparent;
   border: 1px solid transparent;
+  box-shadow: inset 0 0 0 3px transparent;
   border-radius: 5px;
   cursor: pointer;
   background: #E11541;
