@@ -55,7 +55,7 @@ export const HeaderLinkText = styled(Link)`
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #5b5b5b;
+    background-color: #E11541;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;

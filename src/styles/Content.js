@@ -9,3 +9,6 @@ export const ContentContainer = styled.div`
 export const TextSection = styled.div`
   max-width: 600px;
 `
+export const FlexWrapper = styled.div`
+  display: flex;
+`
