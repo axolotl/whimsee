@@ -4,7 +4,32 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
-import './layout.css'
+import { ContentContainer } from '../styles/Content'
+
+// import './css/rest.css'
+// import './css/global.css'
+
+import { injectGlobal } from 'styled-components'
+import reset from 'styled-reset'
+
+// // import non-Google fonts locally
+// import GoodDogPlain from '../fonts/Good-Dog-Plain.tff'
+// import PrimerPrint from '../fonts/Primer-Print.tff'
+
+injectGlobal`
+  ${reset}
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Henny+Penny');
+
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -29,16 +54,9 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
+        <ContentContainer>
           {children}
-        </div>
+        </ContentContainer>
       </>
     )}
   />
