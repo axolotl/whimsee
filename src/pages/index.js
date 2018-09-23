@@ -3,7 +3,7 @@ import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import { P } from '../styles/Text'
-import { FlexWrapper, TextSection } from '../styles/Content'
+import { FlexWrapper, TextSectionSide } from '../styles/Content'
 import {
   CTAHeader,
   CTABody,
@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <FlexWrapper>
         <Img resolutions={image} />
-        <TextSection>
+        <TextSectionSide>
           <CTAHeader>
             Introducing this awsome new book ... continue intro copy
           </CTAHeader>
@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
           <CTAButtonText to="/purchase">
             <CTAButton>Purchase now</CTAButton>
           </CTAButtonText>
-        </TextSection>
+        </TextSectionSide>
       </FlexWrapper>
     </Layout>
   )

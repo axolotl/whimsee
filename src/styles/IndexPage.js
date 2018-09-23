@@ -14,7 +14,6 @@ export const CTABody = styled.p`
 `
 
 export const CTAButton = styled.button`
-  display: block;
   margin: 20px;
   text-align: center;
   font-size: 2.4rem;
