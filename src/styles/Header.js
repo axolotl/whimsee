@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Link from 'gatsby-link';
 
 export const HeaderContainer = styled.div`
@@ -13,6 +13,7 @@ export const HeaderContainer = styled.div`
 
 export const LinksContainer = styled.div`
   display: flex;
+  align-items: center;
 `
 
 export const HeaderTitle = styled(Link)`
@@ -20,7 +21,26 @@ export const HeaderTitle = styled(Link)`
   font-family: 'Henny Penny', cursive;
   padding: 30px 0;
   text-decoration: none;
-  color: black;
+  color: #111111;
+`
+
+export const DropdownContainer = styled.div`
+  position: relative;
+`
+
+export const HeaderDropdownParentText = styled.p`
+  text-decoration: none;
+  font-size: 2.0rem;
+  margin: 10px;
+  padding: 5px 0;
+  font-family: 'Oxygen', sans-serif;
+  color: #363636;
+  position: relative;
+  cursor: pointer;
+
+  &:hover + ${PopdownItem} {
+    color: red;
+  }
 `
 
 export const HeaderLinkText = styled(Link)`
@@ -29,12 +49,8 @@ export const HeaderLinkText = styled(Link)`
   margin: 10px;
   padding: 5px 0;
   font-family: 'Oxygen', sans-serif;
-  color: black;
+  color: #363636;
   position: relative;
-
-  &:hover{
-    color: #5b5b5b;
-  }
 
   &:before {
     content: "";
@@ -53,4 +69,56 @@ export const HeaderLinkText = styled(Link)`
     visibility: visible;
     transform: scaleX(1);
   }
+`
+
+export const LinkPopdown = styled.ul`
+  position: absolute;
+  transition: all 0.5s ease;
+  background-color: white;
+  border: 1px solid #8c8c8c;
+  padding: 0px 10px 10px 15px;
+  border-radius: 5px;
+  left: -15px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  ${props => props.hover && css`
+    transition: opacity .3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+  `};
+
+  &:before {
+    content:"";
+    position: absolute;
+    left: 40px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #8c8c8c transparent;
+    z-index: 100;
+  }
+
+  &:after {
+    content:"";
+    position: absolute;
+    left: 41px;
+    top: -9px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 9px 9px 9px;
+    border-color: transparent transparent white transparent;
+    z-index: 100;
+  }
+`
+export const PopdownItem = styled.li`
+  display: table;
+  background-color: white;
+  white-space: nowrap;
+  margin: 15px 0;
+  position: relative;
 `
