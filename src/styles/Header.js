@@ -37,10 +37,6 @@ export const HeaderDropdownParentText = styled.p`
   color: #363636;
   position: relative;
   cursor: pointer;
-
-  &:hover + ${PopdownItem} {
-    color: red;
-  }
 `
 
 export const HeaderLinkText = styled(Link)`
