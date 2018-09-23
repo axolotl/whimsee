@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-export const H1 = styled.h1`
-  font-size: 3.6rem;
-  font-family: 'Henny Penny', cursive;
-  margin: 20px 0;
+export const P = styled.p`
+  font-size: 1.6rem;
+  font-family: 'Oxygen', sans-serif;
 `

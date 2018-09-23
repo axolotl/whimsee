@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const ContentContainer = styled.div`
-  max-width: 800px;
-  margin: 0px auto;
-  display: flex;
-  flex-direction: column;
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 20px;
+  flex: 1 0 auto;
 `

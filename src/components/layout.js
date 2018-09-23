@@ -4,17 +4,12 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
-import { ContentContainer } from '../styles/Content'
+import { PageSpacer, ContentContainer } from '../styles/Content'
 
-// import './css/rest.css'
-// import './css/global.css'
+import Footer from './footer'
 
 import { injectGlobal } from 'styled-components'
 import reset from 'styled-reset'
-
-// // import non-Google fonts locally
-// import GoodDogPlain from '../fonts/Good-Dog-Plain.tff'
-// import PrimerPrint from '../fonts/Primer-Print.tff'
 
 injectGlobal`
   ${reset}
@@ -27,7 +22,18 @@ injectGlobal`
     font-size: 62.5%;
   }
 
+  html, body, #___gatsby, #___gatsby > * {
+    height: 100%;
+  }
+
+  #___gatsby > * {
+    display: flex;
+    flex-direction: column;
+    margin: -2px 0;
+  }
+
   @import url('https://fonts.googleapis.com/css?family=Henny+Penny');
+  @import url('https://fonts.googleapis.com/css?family=Oxygen');
 
 `
 
@@ -53,10 +59,15 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <div>
+          <Header siteTitle={data.site.siteMetadata.title} />
+        </div>
         <ContentContainer>
           {children}
         </ContentContainer>
+        <div>
+          <Footer />
+        </div>
       </>
     )}
   />

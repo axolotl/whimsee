@@ -1,46 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
-// const Header = ({ siteTitle }) => (
-//   <div
-//     style={{
-//       background: 'rebeccapurple',
-//       marginBottom: '1.45rem',
-//     }}
-//   >
-//     <div
-//       style={{
-//         margin: '0 auto',
-//         maxWidth: 960,
-//         padding: '1.45rem 1.0875rem',
-//       }}
-//     >
-//       <h1 style={{ margin: 0 }}>
-//         <Link
-//           to="/"
-//           style={{
-//             color: 'white',
-//             textDecoration: 'none',
-//           }}
-//         >
-//           {siteTitle}
-//         </Link>
-//       </h1>
-//     </div>
-//   </div>
-// )
-
-// import styles
-import { HeaderContainer, LinksContainer, HeaderLinkText } from '../styles/Header'
-import { H1 } from '../styles/Text'
+import { HeaderContainer, LinksContainer, HeaderTitle, HeaderLinkText } from '../styles/Header'
 
 const Header = ({ siteTitle }) => (
   <HeaderContainer>
-    <H1>{siteTitle}</H1>
+    <HeaderTitle to="/">{siteTitle}</HeaderTitle>
     <LinksContainer>
-      <HeaderLinkText>About</HeaderLinkText>
-      <HeaderLinkText>Purchase</HeaderLinkText>
-      <HeaderLinkText>Contact</HeaderLinkText>
+      <HeaderLinkText to="/about">About</HeaderLinkText>
+      <HeaderLinkText to="/purchase">Purchase</HeaderLinkText>
+      <HeaderLinkText to="/contact">Contact</HeaderLinkText>
     </LinksContainer>
   </HeaderContainer>
 )
