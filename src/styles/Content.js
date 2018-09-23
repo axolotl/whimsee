@@ -6,3 +6,6 @@ export const ContentContainer = styled.div`
   padding: 0 20px;
   flex: 1 0 auto;
 `
+export const TextSection = styled.div`
+  max-width: 600px;
+`

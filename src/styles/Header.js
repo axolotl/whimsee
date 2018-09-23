@@ -82,6 +82,7 @@ export const LinkPopdown = styled.ul`
 
   opacity: 0;
   visibility: hidden;
+  z-index: 100;
 
   ${props => props.hover && css`
     transition: opacity .3s ease-in-out;
