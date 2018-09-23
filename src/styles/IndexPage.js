@@ -5,12 +5,14 @@ export const CTAHeader = styled.h2`
   font-size: 2.8rem;
   margin: 20px;
   color: #111111;
+  font-family: 'Oxygen', sans-serif;
 `
 
 export const CTABody = styled.p`
   font-size: 1.8rem;
   margin: 20px;
   color: #111111;
+  font-family: 'Oxygen', sans-serif;
 `
 
 export const CTAButton = styled.button`
