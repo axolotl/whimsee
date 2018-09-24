@@ -1,23 +1,2 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Henny+Penny');
-
-@font-face {
-  font-family: 'Good Dog Plain';
-  font-weight: normal;
-  font-style: normal;
-  src: url('../../fonts/Good-Dog-Plain.tff') format('truetype');
-}
-
-@font-face {
-  font-family: 'Primer Print';
-  font-weight: normal;
-  font-style: normal;
-  src: url('../../fonts/Primer-Print.tff') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css?family=Oxygen');

@@ -11,6 +11,8 @@ import Footer from './footer'
 import { injectGlobal } from 'styled-components'
 import reset from 'styled-reset'
 
+import './css/global.css'
+
 injectGlobal`
   ${reset}
 
@@ -31,10 +33,6 @@ injectGlobal`
     flex-direction: column;
     margin: -2px 0;
   }
-
-  @import url('https://fonts.googleapis.com/css?family=Henny+Penny');
-  @import url('https://fonts.googleapis.com/css?family=Oxygen');
-
 `
 
 const Layout = ({ children }) => (
