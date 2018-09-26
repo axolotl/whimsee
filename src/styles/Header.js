@@ -69,11 +69,12 @@ export const HeaderLinkText = styled(Link)`
 
 export const LinkPopdown = styled.ul`
   position: absolute;
-  transition: all 0.5s ease;
+  transition: all .3s ease-in-out;
   background-color: white;
-  border: 1px solid #8c8c8c;
+  border: 1px solid #a8a8a8;
   padding: 0px 10px 10px 15px;
   border-radius: 5px;
+  box-shadow: 0px 2px 10px 0px rgba(184,184,184,1);
   left: -15px;
 
   opacity: 0;
@@ -81,7 +82,6 @@ export const LinkPopdown = styled.ul`
   z-index: 100;
 
   ${props => props.hover && css`
-    transition: opacity .3s ease-in-out;
     opacity: 1;
     visibility: visible;
   `};
@@ -95,7 +95,7 @@ export const LinkPopdown = styled.ul`
     height: 0;
     border-style: solid;
     border-width: 0 10px 10px 10px;
-    border-color: transparent transparent #8c8c8c transparent;
+    border-color: transparent transparent #a8a8a8 transparent;
     z-index: 100;
   }
 
@@ -118,4 +118,15 @@ export const PopdownItem = styled.li`
   white-space: nowrap;
   margin: 15px 0;
   position: relative;
+
+  transition: all .3s ease-in-out;
+
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+
+  ${props => props.hover && css`
+    opacity: 1;
+    visibility: visible;
+  `};
 `

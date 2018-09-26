@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <FlexWrapper>
         <Img resolutions={image} />
-        <TextSectionSide>
+        <TextSectionSide style={{ marginTop: '30px' }}>
           <CTAHeader>
             Introducing this awsome new book ... continue intro copy
           </CTAHeader>

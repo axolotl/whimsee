@@ -40,13 +40,13 @@ class Header extends Component {
             <HeaderDropdownParentText>About</HeaderDropdownParentText>
 
             <LinkPopdown hover={hover}>
-              <PopdownItem>
+              <PopdownItem hover={hover}>
                 <HeaderLinkText to="/about-book">About the Book</HeaderLinkText>
               </PopdownItem>
-              <PopdownItem>
+              <PopdownItem hover={hover}>
                 <HeaderLinkText to="/about-authors">About the Authors</HeaderLinkText>
               </PopdownItem>
-              <PopdownItem>
+              <PopdownItem hover={hover}>
                 <HeaderLinkText to="/about-publisher">About the Publisher</HeaderLinkText>
               </PopdownItem>
             </LinkPopdown>
