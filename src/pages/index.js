@@ -40,7 +40,7 @@ export default IndexPage
 
 export const contentQuery = graphql`
   query contentQuery {
-    file(relativePath: { eq: "whimsee-cover-img.jpg" }) {
+    file(relativePath: { eq: "whimsee-cover.png" }) {
       childImageSharp {
         resolutions(width: 500, quality: 100) {
           ...GatsbyImageSharpResolutions
