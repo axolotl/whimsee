@@ -27,8 +27,11 @@ const IndexPage = ({ data }) => {
             blah, Blah, blah, Blah, blah, Blah, blah, Blah, blah,...{' '}
           </CTABody>
 
+          <CTAButtonText to="/demo">
+            <CTAButton color="#1485CC">Look inside!</CTAButton>
+          </CTAButtonText>
           <CTAButtonText to="/purchase">
-            <CTAButton>Purchase now</CTAButton>
+            <CTAButton style={{ marginTop: '0px' }}>Purchase now</CTAButton>
           </CTAButtonText>
         </TextSectionSide>
       </FlexWrapper>

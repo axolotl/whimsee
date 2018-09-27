@@ -20,20 +20,21 @@ export const CTAButton = styled.button`
   text-align: center;
   font-size: 2.4rem;
   padding: 10px 30px;
-  margin-top: 50px;
+  margin-top: 20px;
   background: transparent;
   border: 1px solid transparent;
   box-shadow: inset 0 0 0 3px transparent;
   border-radius: 5px;
   cursor: pointer;
-  background: #E11541;
+  background: ${props => props.color ? props.color : '#E11541'};
   color: white;
   transition: all .3s ease;
+  width: 225px;
 
   &:hover {
     background: rgba(0,0,0,0);
-    color: #E11541;
-    box-shadow: inset 0 0 0 3px #E11541;
+    color: ${props => props.color ? props.color : '#E11541'};
+    box-shadow: inset 0 0 0 3px ${props => props.color ? props.color : '#E11541'};
   }
 `
 
