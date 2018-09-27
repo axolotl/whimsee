@@ -30,7 +30,7 @@ export const DropdownContainer = styled.div`
 
 export const HeaderDropdownParentText = styled.p`
   text-decoration: none;
-  font-size: 2.0rem;
+  font-size: 2.3rem;
   margin: 10px;
   padding: 5px 0;
   font-family: 'Oxygen', sans-serif;
@@ -41,7 +41,7 @@ export const HeaderDropdownParentText = styled.p`
 
 export const HeaderLinkText = styled(Link)`
   text-decoration: none;
-  font-size: 2.0rem;
+  font-size: 2.3rem;
   margin: 10px;
   padding: 5px 0;
   font-family: 'Oxygen', sans-serif;
