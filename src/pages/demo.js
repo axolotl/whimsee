@@ -1,52 +1,61 @@
-import React, { Fragement } from 'react'
+import React, { Component } from 'react'
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
 import { P } from '../styles/Text'
 import { DemoContainer } from '../styles/Demo'
 
-const Demo = ({ data }) => {
-  // grab all images
-  const { edges } = data.allImageSharp
-  // parse out only only the onces we need
-  const images = edges.filter(image => !image.node.sizes.src.match('cover'))
-  const fronts = []
-  const ends = []
+class Demo extends Component {
+  state = {
+    frontIndex: 0,
+    backIndex: 0
+  }
 
-  // sort images into the correct categories based on filename
-  images.forEach(
-    image =>
-      parseInt(image.node.sizes.src.match(/-[0-9]{2}-/)[0].slice(1, 3)) %
-      2 ===
-      0
-        ? ends.push(image)
-        : fronts.push(image)
-  )
+  render() {
+    // grab all images
+    const { edges } = this.props.data.allImageSharp
+    // parse out only only the onces we need
+    const images = edges.filter(image => !image.node.sizes.src.match('cover'))
+    const fronts = []
+    const ends = []
 
-  return (
-    <Layout>
-      <DemoContainer>
-        <Img style={{ width: '300px' }} sizes={fronts[0].node.sizes} />
-        <Img style={{ width: '300px' }} sizes={ends[0].node.sizes} />
+    // sort images into the correct categories based on filename
+    images.forEach(
+      image =>
+        parseInt(image.node.sizes.src.match(/-[0-9]{2}-/)[0].slice(1, 3)) %
+        2 ===
+        0
+          ? ends.push(image)
+          : fronts.push(image)
+    )
 
-        {/*
+    return (
+      <Layout>
+        <DemoContainer>
+          <button>Prev</button>
+          <button>Next</button>
+          <Img style={{ width: '300px' }} sizes={fronts[0].node.sizes} />
+          <Img style={{ width: '300px' }} sizes={ends[0].node.sizes} />
 
-        {fronts.map((image, i) => {
-          return (
-            <Img key={i} style={{ width: '350px' }} sizes={image.node.sizes} />
-          )
-        })}
+          {/*
 
-        {ends.map((image, i) => {
-          return (
-            <Img key={i} style={{ width: '350px' }} sizes={image.node.sizes} />
-          )
-        })}
+          {fronts.map((image, i) => {
+            return (
+              <Img key={i} style={{ width: '350px' }} sizes={image.node.sizes} />
+            )
+          })}
 
-        */}
+          {ends.map((image, i) => {
+            return (
+              <Img key={i} style={{ width: '350px' }} sizes={image.node.sizes} />
+            )
+          })}
 
-      </DemoContainer>
-    </Layout>
-  )
+          */}
+
+        </DemoContainer>
+      </Layout>
+    )
+  }
 }
 
 export default Demo
