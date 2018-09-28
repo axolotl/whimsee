@@ -10,13 +10,17 @@ class Demo extends Component {
     backIndex: 0
   }
 
+  swapPicture = (side, direction) => {
+    this.setState({ [side]: this.state[side] + direction })
+  }
+
   render() {
     // grab all images
     const { edges } = this.props.data.allImageSharp
     // parse out only only the onces we need
     const images = edges.filter(image => !image.node.sizes.src.match('cover'))
     const fronts = []
-    const ends = []
+    const backs = []
 
     // sort images into the correct categories based on filename
     images.forEach(
@@ -24,17 +28,22 @@ class Demo extends Component {
         parseInt(image.node.sizes.src.match(/-[0-9]{2}-/)[0].slice(1, 3)) %
         2 ===
         0
-          ? ends.push(image)
+          ? backs.push(image)
           : fronts.push(image)
     )
+
+    const { swapPicture } = this
+    const { frontIndex, backIndex } = this.state
+
+    console.log(this.state)
 
     return (
       <Layout>
         <DemoContainer>
-          <button>Prev</button>
-          <button>Next</button>
-          <Img style={{ width: '300px' }} sizes={fronts[0].node.sizes} />
-          <Img style={{ width: '300px' }} sizes={ends[0].node.sizes} />
+          <button onClick={() => swapPicture('frontIndex', -1)}>Prev</button>
+          <button onClick={() => swapPicture('frontIndex', 1)}>Next</button>
+          <Img style={{ width: '300px' }} sizes={fronts[frontIndex].node.sizes} />
+          <Img style={{ width: '300px' }} sizes={backs[0].node.sizes} />
 
           {/*
 
