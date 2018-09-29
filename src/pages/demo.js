@@ -7,11 +7,19 @@ import { DemoContainer } from '../styles/Demo'
 class Demo extends Component {
   state = {
     frontIndex: 0,
-    backIndex: 0
+    backIndex: 0,
   }
 
+  // for expediency setting the number of images to 3 on either side
   swapPicture = (side, direction) => {
-    this.setState({ [side]: this.state[side] + direction })
+    const current = this.state[side]
+    const next =
+      current + direction < 0
+        ? 2
+        : current + direction > 2
+          ? 0
+          : current + direction
+    this.setState({ [side]: next })
   }
 
   render() {
@@ -42,8 +50,13 @@ class Demo extends Component {
         <DemoContainer>
           <button onClick={() => swapPicture('frontIndex', -1)}>Prev</button>
           <button onClick={() => swapPicture('frontIndex', 1)}>Next</button>
-          <Img style={{ width: '300px' }} sizes={fronts[frontIndex].node.sizes} />
-          <Img style={{ width: '300px' }} sizes={backs[0].node.sizes} />
+          <Img
+            style={{ width: '300px' }}
+            sizes={fronts[frontIndex].node.sizes}
+          />
+          <Img style={{ width: '300px' }} sizes={backs[backIndex].node.sizes} />
+          <button onClick={() => swapPicture('backIndex', -1)}>Prev</button>
+          <button onClick={() => swapPicture('backIndex', 1)}>Next</button>
 
           {/*
 
@@ -60,7 +73,6 @@ class Demo extends Component {
           })}
 
           */}
-
         </DemoContainer>
       </Layout>
     )
