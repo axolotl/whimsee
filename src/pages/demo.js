@@ -51,7 +51,7 @@ class Demo extends Component {
           <button onClick={() => swapPicture('frontIndex', -1)}>Prev</button>
           <button onClick={() => swapPicture('frontIndex', 1)}>Next</button>
           <Img
-            style={{ width: '300px' }}
+            style={{ width: '300px', marginRight: '5px' }}
             sizes={fronts[frontIndex].node.sizes}
           />
           <Img style={{ width: '300px' }} sizes={backs[backIndex].node.sizes} />
