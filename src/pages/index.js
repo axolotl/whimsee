@@ -45,7 +45,7 @@ export const contentQuery = graphql`
   query contentQuery {
     file(relativePath: { eq: "whimsee-cover.png" }) {
       childImageSharp {
-        resolutions(width: 500, quality: 100) {
+        resolutions(width: 500) {
           ...GatsbyImageSharpResolutions
         }
       }

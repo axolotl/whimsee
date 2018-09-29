@@ -87,7 +87,7 @@ export const demoQuery = graphql`
       edges {
         node {
           id
-          sizes(maxWidth: 550, quality: 100) {
+          sizes(maxWidth: 550) {
             sizes
             ...GatsbyImageSharpSizes_noBase64
           }
