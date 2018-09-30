@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
-import Img from 'gatsby-image'
 import { P } from '../styles/Text'
-import { DemoContainer, DemoButton } from '../styles/Demo'
+import { DemoIntro, DemoContainer, DemoButton, DemoImg } from '../styles/Demo'
 
 class Demo extends Component {
   state = {
@@ -47,32 +46,43 @@ class Demo extends Component {
 
     return (
       <Layout>
-        <DemoContainer style={{ maxWidth: '600px' }}>
-          <DemoButton style={{ top: 10, left: 10 }} onClick={() => swapPicture('frontIndex', -1)}>Previous</DemoButton>
-          <DemoButton style={{ bottom: 10, left: 10 }} onClick={() => swapPicture('frontIndex', 1)}>Next</DemoButton>
-          <Img
+        <DemoIntro>
+          Use the previous and next buttons to try creating a new dog breed!
+        </DemoIntro>
+        <DemoContainer style={{ maxWidth: '580px' }}>
+          <DemoButton
+            style={{ top: 10, left: 10 }}
+            onClick={() => swapPicture('frontIndex', -1)}
+          >
+            Previous
+          </DemoButton>
+          <DemoButton
+            style={{ bottom: 10, left: 10 }}
+            onClick={() => swapPicture('frontIndex', 1)}
+          >
+            Next
+          </DemoButton>
+          <DemoImg
             style={{ width: '300px', marginRight: '5px' }}
             sizes={fronts[frontIndex].node.sizes}
           />
-          <Img style={{ width: '300px' }} sizes={backs[backIndex].node.sizes} />
-          <DemoButton style={{ top: 10, right: 10 }} onClick={() => swapPicture('backIndex', -1)}>Previous</DemoButton>
-          <DemoButton style={{ bottom: 10, right: 10 }} onClick={() => swapPicture('backIndex', 1)}>Next</DemoButton>
+          <DemoImg
+            style={{ width: '300px' }}
+            sizes={backs[backIndex].node.sizes}
+          />
+          <DemoButton
+            style={{ top: 10, right: 10 }}
+            onClick={() => swapPicture('backIndex', -1)}
+          >
+            Previous
+          </DemoButton>
+          <DemoButton
+            style={{ bottom: 10, right: 10 }}
+            onClick={() => swapPicture('backIndex', 1)}
+          >
+            Next
+          </DemoButton>
 
-          {/*
-
-          {fronts.map((image, i) => {
-            return (
-              <Img key={i} style={{ width: '350px' }} sizes={image.node.sizes} />
-            )
-          })}
-
-          {ends.map((image, i) => {
-            return (
-              <Img key={i} style={{ width: '350px' }} sizes={image.node.sizes} />
-            )
-          })}
-
-          */}
         </DemoContainer>
       </Layout>
     )

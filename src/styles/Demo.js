@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 
 export const DemoContainer = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ export const DemoButton = styled.button`
   border-radius: 5px;
 
   position: absolute;
-  z-index: 100;
+  z-index: 10;
 
   transition: all .3s ease;
 
@@ -29,4 +30,14 @@ export const DemoButton = styled.button`
     background: white;
     box-shadow: inset 0 0 0 3px #1485CC;
   }
+`
+
+export const DemoIntro = styled.p`
+  font-size: 2rem;
+  margin: 0 10px 10px;
+  text-align: center;
+`
+
+export const DemoImg = styled(Img)`
+  transition: all .3s ease;
 `
