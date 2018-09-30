@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
 import { P } from '../styles/Text'
-import { DemoContainer } from '../styles/Demo'
+import { DemoContainer, DemoButton } from '../styles/Demo'
 
 class Demo extends Component {
   state = {
@@ -47,16 +47,16 @@ class Demo extends Component {
 
     return (
       <Layout>
-        <DemoContainer>
-          <button onClick={() => swapPicture('frontIndex', -1)}>Prev</button>
-          <button onClick={() => swapPicture('frontIndex', 1)}>Next</button>
+        <DemoContainer style={{ maxWidth: '600px' }}>
+          <DemoButton style={{ top: 10, left: 10 }} onClick={() => swapPicture('frontIndex', -1)}>Previous</DemoButton>
+          <DemoButton style={{ bottom: 10, left: 10 }} onClick={() => swapPicture('frontIndex', 1)}>Next</DemoButton>
           <Img
             style={{ width: '300px', marginRight: '5px' }}
             sizes={fronts[frontIndex].node.sizes}
           />
           <Img style={{ width: '300px' }} sizes={backs[backIndex].node.sizes} />
-          <button onClick={() => swapPicture('backIndex', -1)}>Prev</button>
-          <button onClick={() => swapPicture('backIndex', 1)}>Next</button>
+          <DemoButton style={{ top: 10, right: 10 }} onClick={() => swapPicture('backIndex', -1)}>Previous</DemoButton>
+          <DemoButton style={{ bottom: 10, right: 10 }} onClick={() => swapPicture('backIndex', 1)}>Next</DemoButton>
 
           {/*
 
