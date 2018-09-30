@@ -36,6 +36,7 @@ export const DemoIntro = styled.p`
   font-size: 2rem;
   margin: 0 10px 10px;
   text-align: center;
+  font-family: 'Oxygen', sans-serif;
 `
 
 export const DemoImg = styled(Img)`
