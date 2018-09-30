@@ -3,6 +3,7 @@ import Img from 'gatsby-image'
 
 export const DemoContainer = styled.div`
   display: flex;
+  margin: 0 auto;
   position: relative;
 `
 
@@ -37,6 +38,7 @@ export const DemoIntro = styled.p`
   margin: 0 10px 10px;
   text-align: center;
   font-family: 'Oxygen', sans-serif;
+  text-wrap: wrap;
 `
 
 export const DemoImg = styled(Img)`

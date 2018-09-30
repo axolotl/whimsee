@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
-import { P } from '../styles/Text'
 import { DemoIntro, DemoContainer, DemoButton, DemoImg } from '../styles/Demo'
 
 class Demo extends Component {
