@@ -32,7 +32,11 @@ class Demo extends Component {
         : current + direction
 
   setSlide = (side, direction) => {
-    this.setState({ slide: true, direction: direction === -1 ? 'up' : 'down', animatedSide: side })
+    this.setState({
+      slide: true,
+      direction: direction === -1 ? 'up' : 'down',
+      animatedSide: side,
+    })
     setTimeout(() => {
       this.setState({ slide: false })
       this.swapPicture(side, direction)
@@ -70,42 +74,64 @@ class Demo extends Component {
           <DemoImgContainer style={{ marginRight: '5px' }}>
             <DemoButton
               style={{ top: 10, left: 10 }}
-              onClick={() => {
-                setSlide('frontIndex', -1)
-              }}
+              onClick={() => (!slide ? setSlide('frontIndex', -1) : '')}
             >
               Previous
             </DemoButton>
             <DemoButton
               style={{ bottom: 10, left: 10 }}
-              onClick={() => setSlide('frontIndex', 1)}
+              onClick={() => (!slide ? setSlide('frontIndex', 1) : '')}
             >
               Next
             </DemoButton>
             <DemoImg
-              slide={slide} direction={direction} animatedSide={animatedSide === 'frontIndex' ? true : false}
+              slide={slide}
+              direction={direction}
+              animatedSide={animatedSide === 'frontIndex' ? true : false}
               sizes={fronts[calcIndex(frontIndex, -1)].node.sizes}
             />
-            <DemoImg slide={slide} direction={direction} animatedSide={animatedSide === 'frontIndex' ? true : false} sizes={fronts[frontIndex].node.sizes} />
             <DemoImg
-              slide={slide} direction={direction} animatedSide={animatedSide === 'frontIndex' ? true : false}
+              slide={slide}
+              direction={direction}
+              animatedSide={animatedSide === 'frontIndex' ? true : false}
+              sizes={fronts[frontIndex].node.sizes}
+            />
+            <DemoImg
+              slide={slide}
+              direction={direction}
+              animatedSide={animatedSide === 'frontIndex' ? true : false}
               sizes={fronts[calcIndex(frontIndex, 1)].node.sizes}
             />
           </DemoImgContainer>
 
           <DemoImgContainer>
-            <DemoImg slide={slide} direction={direction} animatedSide={animatedSide === 'backIndex' ? true : false} sizes={backs[calcIndex(backIndex, -1)].node.sizes} />
-            <DemoImg slide={slide} direction={direction} animatedSide={animatedSide === 'backIndex' ? true : false} sizes={backs[backIndex].node.sizes} />
-            <DemoImg slide={slide} direction={direction} animatedSide={animatedSide === 'backIndex' ? true : false} sizes={backs[calcIndex(backIndex, 1)].node.sizes} />
+            <DemoImg
+              slide={slide}
+              direction={direction}
+              animatedSide={animatedSide === 'backIndex' ? true : false}
+              sizes={backs[calcIndex(backIndex, -1)].node.sizes}
+            />
+            <DemoImg
+              slide={slide}
+              direction={direction}
+              animatedSide={animatedSide === 'backIndex' ? true : false}
+              sizes={backs[backIndex].node.sizes}
+            />
+            <DemoImg
+              slide={slide}
+              direction={direction}
+              animatedSide={animatedSide === 'backIndex' ? true : false}
+              sizes={backs[calcIndex(backIndex, 1)].node.sizes}
+            />
             <DemoButton
               style={{ top: 10, right: 10 }}
-              onClick={() => setSlide('backIndex', -1)}
+              onClick={() => (!slide ? setSlide('backIndex', -1) : '')}
             >
               Previous
             </DemoButton>
             <DemoButton
               style={{ bottom: 10, right: 10 }}
-              onClick={() => setSlide('backIndex', 1)}
+              onClick={() => (!slide ? setSlide('backIndex', 1) : '')}
             >
               Next
             </DemoButton>
