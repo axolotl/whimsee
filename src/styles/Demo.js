@@ -1,10 +1,17 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Img from 'gatsby-image'
 
 export const DemoContainer = styled.div`
   display: flex;
   margin: 0 auto;
+  height: 480px;
+  max-width: 600px;
+  overflow: hidden;
   position: relative;
+`
+export const DemoImgContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 export const DemoButton = styled.button`
@@ -42,5 +49,13 @@ export const DemoIntro = styled.p`
 `
 
 export const DemoImg = styled(Img)`
-  transition: all .3s ease;
+  min-height: 100%;
+  width: 300px; 
+  transform: translateY(-480px);
+
+  ${({ slide, direction, animatedSide }) => slide && animatedSide && css`
+    transition: transform 1s ease;
+    transform: translateY(${direction === 'up' ? 0 : '-960px'});
+  `};
 `
+

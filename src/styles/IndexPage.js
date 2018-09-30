@@ -26,15 +26,15 @@ export const CTAButton = styled.button`
   box-shadow: inset 0 0 0 3px transparent;
   border-radius: 5px;
   cursor: pointer;
-  background: ${props => props.color ? props.color : '#E11541'};
+  background: ${({ color }) => color || '#E11541'};
   color: white;
   transition: all .3s ease;
   width: 225px;
 
   &:hover {
     background: rgba(0,0,0,0);
-    color: ${props => props.color ? props.color : '#E11541'};
-    box-shadow: inset 0 0 0 3px ${props => props.color ? props.color : '#E11541'};
+    color: ${({ color }) => color || '#E11541'};
+    box-shadow: inset 0 0 0 3px ${({ color }) => color || '#E11541'};
   }
 `
 

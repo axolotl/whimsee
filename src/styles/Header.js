@@ -81,7 +81,7 @@ export const LinkPopdown = styled.ul`
   visibility: hidden;
   z-index: 100;
 
-  ${props => props.hover && css`
+  ${({ hover }) => hover && css`
     opacity: 1;
     visibility: visible;
   `};
@@ -113,11 +113,9 @@ export const LinkPopdown = styled.ul`
   }
 `
 export const PopdownItem = styled.li`
-  display: table;
   background-color: white;
   white-space: nowrap;
   margin: 15px 0;
-  position: relative;
 
   transition: all .3s ease-in-out;
 
@@ -125,7 +123,7 @@ export const PopdownItem = styled.li`
   visibility: hidden;
   z-index: 100;
 
-  ${props => props.hover && css`
+  ${({ hover }) => hover && css`
     opacity: 1;
     visibility: visible;
   `};

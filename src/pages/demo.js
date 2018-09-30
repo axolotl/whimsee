@@ -1,23 +1,42 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
-import { DemoIntro, DemoContainer, DemoButton, DemoImg } from '../styles/Demo'
+import {
+  DemoIntro,
+  DemoContainer,
+  DemoImgContainer,
+  DemoButton,
+  DemoImg,
+} from '../styles/Demo'
 
 class Demo extends Component {
   state = {
-    frontIndex: 0,
-    backIndex: 0,
+    frontIndex: 1,
+    backIndex: 1,
+    slide: false,
+    direction: '',
+    animatedSide: '',
   }
 
   // for expediency setting the number of images to 3 on either side
   swapPicture = (side, direction) => {
     const current = this.state[side]
-    const next =
-      current + direction < 0
-        ? 2
-        : current + direction > 2
-          ? 0
-          : current + direction
+    const next = this.calcIndex(current, direction)
     this.setState({ [side]: next })
+  }
+
+  calcIndex = (current, direction) =>
+    current + direction < 0
+      ? 2
+      : current + direction > 2
+        ? 0
+        : current + direction
+
+  setSlide = (side, direction) => {
+    this.setState({ slide: true, direction: direction === -1 ? 'up' : 'down', animatedSide: side })
+    setTimeout(() => {
+      this.setState({ slide: false })
+      this.swapPicture(side, direction)
+    }, 1000)
   }
 
   render() {
@@ -38,50 +57,59 @@ class Demo extends Component {
           : fronts.push(image)
     )
 
-    const { swapPicture } = this
-    const { frontIndex, backIndex } = this.state
-
-    console.log(this.state)
+    const { swapPicture, calcIndex, setSlide } = this
+    const { frontIndex, backIndex, slide, direction, animatedSide } = this.state
 
     return (
       <Layout>
         <DemoIntro>
           Use the previous and next buttons to try creating a new dog breed!
         </DemoIntro>
-        <DemoContainer style={{ maxWidth: '580px' }}>
-          <DemoButton
-            style={{ top: 10, left: 10 }}
-            onClick={() => swapPicture('frontIndex', -1)}
-          >
-            Previous
-          </DemoButton>
-          <DemoButton
-            style={{ bottom: 10, left: 10 }}
-            onClick={() => swapPicture('frontIndex', 1)}
-          >
-            Next
-          </DemoButton>
-          <DemoImg
-            style={{ width: '300px', marginRight: '5px' }}
-            sizes={fronts[frontIndex].node.sizes}
-          />
-          <DemoImg
-            style={{ width: '300px' }}
-            sizes={backs[backIndex].node.sizes}
-          />
-          <DemoButton
-            style={{ top: 10, right: 10 }}
-            onClick={() => swapPicture('backIndex', -1)}
-          >
-            Previous
-          </DemoButton>
-          <DemoButton
-            style={{ bottom: 10, right: 10 }}
-            onClick={() => swapPicture('backIndex', 1)}
-          >
-            Next
-          </DemoButton>
 
+        <DemoContainer>
+          <DemoImgContainer style={{ marginRight: '5px' }}>
+            <DemoButton
+              style={{ top: 10, left: 10 }}
+              onClick={() => {
+                setSlide('frontIndex', -1)
+              }}
+            >
+              Previous
+            </DemoButton>
+            <DemoButton
+              style={{ bottom: 10, left: 10 }}
+              onClick={() => setSlide('frontIndex', 1)}
+            >
+              Next
+            </DemoButton>
+            <DemoImg
+              slide={slide} direction={direction} animatedSide={animatedSide === 'frontIndex' ? true : false}
+              sizes={fronts[calcIndex(frontIndex, -1)].node.sizes}
+            />
+            <DemoImg slide={slide} direction={direction} animatedSide={animatedSide === 'frontIndex' ? true : false} sizes={fronts[frontIndex].node.sizes} />
+            <DemoImg
+              slide={slide} direction={direction} animatedSide={animatedSide === 'frontIndex' ? true : false}
+              sizes={fronts[calcIndex(frontIndex, 1)].node.sizes}
+            />
+          </DemoImgContainer>
+
+          <DemoImgContainer>
+            <DemoImg slide={slide} direction={direction} animatedSide={animatedSide === 'backIndex' ? true : false} sizes={backs[calcIndex(backIndex, -1)].node.sizes} />
+            <DemoImg slide={slide} direction={direction} animatedSide={animatedSide === 'backIndex' ? true : false} sizes={backs[backIndex].node.sizes} />
+            <DemoImg slide={slide} direction={direction} animatedSide={animatedSide === 'backIndex' ? true : false} sizes={backs[calcIndex(backIndex, 1)].node.sizes} />
+            <DemoButton
+              style={{ top: 10, right: 10 }}
+              onClick={() => setSlide('backIndex', -1)}
+            >
+              Previous
+            </DemoButton>
+            <DemoButton
+              style={{ bottom: 10, right: 10 }}
+              onClick={() => setSlide('backIndex', 1)}
+            >
+              Next
+            </DemoButton>
+          </DemoImgContainer>
         </DemoContainer>
       </Layout>
     )
