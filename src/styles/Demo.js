@@ -54,7 +54,7 @@ export const DemoImg = styled(Img)`
   transform: translateY(-480px);
 
   ${({ slide, direction, animatedSide }) => slide && animatedSide && css`
-    transition: transform 1s ease;
+    transition: transform .5s ease;
     transform: translateY(${direction === 'up' ? 0 : '-960px'});
   `};
 `

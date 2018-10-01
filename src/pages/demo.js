@@ -40,7 +40,7 @@ class Demo extends Component {
     setTimeout(() => {
       this.setState({ slide: false })
       this.swapPicture(side, direction)
-    }, 1000)
+    }, 500)
   }
 
   render() {
