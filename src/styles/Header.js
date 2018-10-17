@@ -9,6 +9,10 @@ export const HeaderContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
 `
 
 export const LinksContainer = styled.div`

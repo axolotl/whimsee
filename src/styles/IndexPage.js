@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Link from 'gatsby-link';
+import Link from 'gatsby-link'
 
 export const CTAHeader = styled.h2`
   font-size: 2.8rem;
@@ -28,11 +28,11 @@ export const CTAButton = styled.button`
   cursor: pointer;
   background: ${({ color }) => color || '#E11541'};
   color: white;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   width: 225px;
 
   &:hover {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     color: ${({ color }) => color || '#E11541'};
     box-shadow: inset 0 0 0 3px ${({ color }) => color || '#E11541'};
   }

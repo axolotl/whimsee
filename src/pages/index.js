@@ -1,10 +1,11 @@
 import React from 'react'
-import Img from 'gatsby-image'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import { P } from '../styles/Text'
 import { FlexWrapper, TextSectionSide } from '../styles/Content'
 import {
+  IndexImg,
   CTAHeader,
   CTABody,
   CTAButton,
@@ -12,12 +13,15 @@ import {
 } from '../styles/IndexPage'
 
 const IndexPage = ({ data }) => {
-  const { resolutions: image } = data.file.childImageSharp
+  const { fluid: image } = data.file.childImageSharp
 
+  // console.log(data)
   return (
     <Layout>
-      <FlexWrapper>
-        <Img resolutions={image} />
+      <FlexWrapper style={{ width: '100%' }}>
+        <div style={{ width: '100%', maxWidth: '500px' }}>
+          <Img fluid={image} style={{ width: '100%' }} />
+        </div>
         <TextSectionSide style={{ marginTop: '30px' }}>
           <CTAHeader>
             Introducing this awsome new book ... continue intro copy
@@ -45,10 +49,16 @@ export const contentQuery = graphql`
   query contentQuery {
     file(relativePath: { eq: "whimsee-cover.png" }) {
       childImageSharp {
-        resolutions(width: 500) {
-          ...GatsbyImageSharpResolutions
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
   }
 `
+
+/*
+resolutions(width: 500) {
+          ...GatsbyImageSharpResolutions
+        }
+      */

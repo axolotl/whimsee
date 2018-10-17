@@ -4,7 +4,7 @@ import { P } from '../styles/Text'
 
 const Footer = () => (
   <FooterContainer>
-    <P>© 2018 Whimsee Books</P>
+    <P>© 2016 Whimsee Books</P>
   </FooterContainer>
 )
 
