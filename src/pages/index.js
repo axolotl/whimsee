@@ -73,14 +73,14 @@ export default IndexPage
 
 export const contentQuery = graphql`
   query contentQuery {
-    splash: file(relativePath: { eq: "whimsee-splash.png" }) {
+    splash: file(relativePath: { eq: "whimsee-cover-splash.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    title: file(relativePath: { eq: "whimsee-title.png" }) {
+    title: file(relativePath: { eq: "whimsee-cover-title.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
