@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 
+// deprecate CTAHeader
 export const CTAHeader = styled.h2`
   font-size: 2.8rem;
   margin: 20px;
@@ -10,6 +11,7 @@ export const CTAHeader = styled.h2`
 
 export const CTABody = styled.p`
   font-size: 1.9rem;
+  line-height: 2.8rem;
   margin: 20px;
   color: #111111;
   font-family: 'Oxygen', sans-serif;

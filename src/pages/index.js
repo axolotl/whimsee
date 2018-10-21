@@ -13,20 +13,37 @@ import {
 } from '../styles/IndexPage'
 
 const IndexPage = ({ data }) => {
-  const { fluid: image } = data.file.childImageSharp
+  const { fluid: splash } = data.splash.childImageSharp
+  const { fluid: title } = data.title.childImageSharp
 
-  // console.log(data)
   return (
     <Layout>
       <FlexWrapper style={{ width: '100%' }}>
-        <div style={{ width: '100%', maxWidth: '500px' }}>
-          <Img fluid={image} style={{ width: '100%' }} />
+        <div
+          style={{
+            width: '100%',
+            maxWidth: '500px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            marginTop: '28px',
+          }}
+        >
+          <Img fluid={splash} style={{ width: '100%' }} />
+          <CTAButtonText to="/demo">
+            <CTAButton color="#1485CC">Look inside!</CTAButton>
+          </CTAButtonText>
+          <CTAButtonText to="/purchase">
+            <CTAButton style={{ marginTop: '0px' }}>Purchase now</CTAButton>
+          </CTAButtonText>
         </div>
-        <TextSectionSide style={{ marginTop: '30px' }}>
+        <TextSectionSide style={{ marginTop: '10px' }}>
           {/* deprecate header */}
           {/*<CTAHeader>
             Introducing this awsome new book ... continue intro copy
           </CTAHeader>*/}
+
+          <Img fluid={title} style={{ width: '100%' }} />
 
           <CTABody>
             Welcome to the world of WhimSee Books! That’s WhimSee as in
@@ -46,13 +63,6 @@ const IndexPage = ({ data }) => {
           </CTABody>
 
           <CTABody>A What?? You’ll find out!</CTABody>
-
-          <CTAButtonText to="/demo">
-            <CTAButton color="#1485CC">Look inside!</CTAButton>
-          </CTAButtonText>
-          <CTAButtonText to="/purchase">
-            <CTAButton style={{ marginTop: '0px' }}>Purchase now</CTAButton>
-          </CTAButtonText>
         </TextSectionSide>
       </FlexWrapper>
     </Layout>
@@ -63,7 +73,14 @@ export default IndexPage
 
 export const contentQuery = graphql`
   query contentQuery {
-    file(relativePath: { eq: "whimsee-cover.png" }) {
+    splash: file(relativePath: { eq: "whimsee-splash.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    title: file(relativePath: { eq: "whimsee-title.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
