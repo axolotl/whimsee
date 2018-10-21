@@ -9,7 +9,7 @@ export const CTAHeader = styled.h2`
 `
 
 export const CTABody = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin: 20px;
   color: #111111;
   font-family: 'Oxygen', sans-serif;

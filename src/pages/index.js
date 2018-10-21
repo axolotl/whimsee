@@ -23,13 +23,29 @@ const IndexPage = ({ data }) => {
           <Img fluid={image} style={{ width: '100%' }} />
         </div>
         <TextSectionSide style={{ marginTop: '30px' }}>
-          <CTAHeader>
+          {/* deprecate header */}
+          {/*<CTAHeader>
             Introducing this awsome new book ... continue intro copy
-          </CTAHeader>
+          </CTAHeader>*/}
+
           <CTABody>
-            Call to action/purchase, probably with a nice big button. Blah,
-            blah, Blah, blah, Blah, blah, Blah, blah, Blah, blah,...{' '}
+            Welcome to the world of WhimSee Books! That’s WhimSee as in
+            whimsical, fanciful, quirky, amusing, creative and imaginative!
           </CTABody>
+
+          <CTABody>
+            Our playful flip book, My Dog Is A What?, is the first in a series.
+            It will give you lots of smiles making off-the-wall combinations of
+            some of your favorite dogs.
+          </CTABody>
+
+          <CTABody>
+            And not only you! The kids in your world, the older people in your
+            world, anyone in your world who could use some new-fashioned fun
+            will love making a HUS-SET or a COR-KY.
+          </CTABody>
+
+          <CTABody>A What?? You’ll find out!</CTABody>
 
           <CTAButtonText to="/demo">
             <CTAButton color="#1485CC">Look inside!</CTAButton>
