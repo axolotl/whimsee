@@ -90,8 +90,3 @@ export const contentQuery = graphql`
   }
 `
 
-/*
-resolutions(width: 500) {
-          ...GatsbyImageSharpResolutions
-        }
-      */
