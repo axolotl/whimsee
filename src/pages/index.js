@@ -46,23 +46,23 @@ const IndexPage = ({ data }) => {
           <Img fluid={title} style={{ width: '100%' }} />
 
           <CTABody>
-            Welcome to the world of WhimSee Books! That’s WhimSee as in
+            Welcome to the world of WhimSee BOOKS! That’s WhimSee as in
             whimsical, fanciful, quirky, amusing, creative and imaginative!
           </CTABody>
 
           <CTABody>
-            Our playful flip book, My Dog Is A What?, is the first in a series.
+            Our playful flip book, My Dog Is A WHAT?, is the first in a series.
             It will give you lots of smiles making off-the-wall combinations of
             some of your favorite dogs.
           </CTABody>
 
           <CTABody>
-            And not only you! The kids in your world, the older people in your
-            world, anyone in your world who could use some new-fashioned fun
-            will love making a HUS-SET or a COR-KY.
+            And not only you! The children in your world, the older people in
+            your world, anyone in your world who could use some new-fashioned
+            fun will love making a HUS-SET or a COR-KY.
           </CTABody>
 
-          <CTABody>A What?? You’ll find out!</CTABody>
+          <CTABody>A WHAT?? You’ll find out!</CTABody>
         </TextSectionSide>
       </FlexWrapper>
     </Layout>
@@ -89,4 +89,3 @@ export const contentQuery = graphql`
     }
   }
 `
-
