@@ -7,10 +7,10 @@ const AboutBook = () => (
   <Layout>
     <TextSection>
       <P>
-        My Dog is a What?, originated with an idea for a witty, LIvely and
-        unique children’s book that will entertain young children and parents
-        aLIke! It is a book that not only promotes a child’s imagination but
-        also incorporates many basic learning concepts in a comical form.
+        My Dog is a What?, originated with an idea for a witty, Lively and
+        unique children’s book that will entertain young ones and parents alike!
+        It is a book that not only promotes a child’s imagination but also
+        incorporates many basic learning concepts in a comical form.
       </P>
       <ul>
         <LI>
