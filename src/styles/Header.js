@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import Link from 'gatsby-link';
+import Link from 'gatsby-link'
 
 export const HeaderContainer = styled.div`
   max-width: 960px;
@@ -25,7 +25,7 @@ export const HeaderTitle = styled(Link)`
   font-family: 'Henny Penny', cursive;
   padding: 30px 0;
   text-decoration: none;
-  color: #111111;
+  color: #6ec347;
 `
 
 export const DropdownContainer = styled.div`
@@ -53,13 +53,13 @@ export const HeaderLinkText = styled(Link)`
   position: relative;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #E11541;
+    background-color: #e11541;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
@@ -73,25 +73,27 @@ export const HeaderLinkText = styled(Link)`
 
 export const LinkPopdown = styled.ul`
   position: absolute;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-color: white;
   border: 1px solid #a8a8a8;
   padding: 0px 10px 10px 15px;
   border-radius: 5px;
-  box-shadow: 0px 2px 10px 0px rgba(184,184,184,1);
+  box-shadow: 0px 2px 10px 0px rgba(184, 184, 184, 1);
   left: -15px;
 
   opacity: 0;
   visibility: hidden;
   z-index: 100;
 
-  ${({ hover }) => hover && css`
-    opacity: 1;
-    visibility: visible;
-  `};
+  ${({ hover }) =>
+    hover &&
+    css`
+      opacity: 1;
+      visibility: visible;
+    `};
 
   &:before {
-    content:"";
+    content: '';
     position: absolute;
     left: 40px;
     top: -10px;
@@ -104,7 +106,7 @@ export const LinkPopdown = styled.ul`
   }
 
   &:after {
-    content:"";
+    content: '';
     position: absolute;
     left: 41px;
     top: -9px;
@@ -121,14 +123,16 @@ export const PopdownItem = styled.li`
   white-space: nowrap;
   margin: 15px 0;
 
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   opacity: 0;
   visibility: hidden;
   z-index: 100;
 
-  ${({ hover }) => hover && css`
-    opacity: 1;
-    visibility: visible;
-  `};
+  ${({ hover }) =>
+    hover &&
+    css`
+      opacity: 1;
+      visibility: visible;
+    `};
 `
