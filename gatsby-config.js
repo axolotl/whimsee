@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Whimsee BOOKS',
+    title: 'Whimsee BOOKS™',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -7,8 +7,15 @@ export const ContentContainer = styled.div`
   padding: 0 20px;
   flex: 1 0 auto;
 `
+
+export const TextWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 export const TextSection = styled.div`
   max-width: 600px;
+  line-height: 2.5rem;
 `
 export const TextSectionSide = styled.div`
   max-width: 400px;

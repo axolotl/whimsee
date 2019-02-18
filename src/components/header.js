@@ -33,6 +33,7 @@ class Header extends Component {
       <HeaderContainer>
         <HeaderTitle to="/">{siteTitle}</HeaderTitle>
         <LinksContainer>
+          <HeaderLinkText to="/">Home</HeaderLinkText>
           <DropdownContainer
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
