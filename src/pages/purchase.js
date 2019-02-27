@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { P } from '../styles/Text'
 import { CTAButton } from '../styles/IndexPage'
 import { Wrapper, Text } from '../styles/Purchase'
 
