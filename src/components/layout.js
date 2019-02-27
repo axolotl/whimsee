@@ -22,6 +22,8 @@ injectGlobal`
 
   html {
     font-size: 62.5%;
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
   }
 
   html, body, #___gatsby, #___gatsby > * {
@@ -60,9 +62,7 @@ const Layout = ({ children }) => (
         <div>
           <Header siteTitle={data.site.siteMetadata.title} />
         </div>
-        <ContentContainer>
-          {children}
-        </ContentContainer>
+        <ContentContainer>{children}</ContentContainer>
         <div>
           <Footer />
         </div>

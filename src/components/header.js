@@ -56,7 +56,7 @@ class Header extends Component {
               </PopdownItem>
             </LinkPopdown>
           </DropdownContainer>
-          <HeaderLinkText to="/events">Events</HeaderLinkText>
+          {/* <HeaderLinkText to="/events">Events</HeaderLinkText> */}
           <HeaderLinkText to="/purchase">Purchase</HeaderLinkText>
           <HeaderLinkText to="/contact">Contact</HeaderLinkText>
         </LinksContainer>
