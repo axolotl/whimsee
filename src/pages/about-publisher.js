@@ -14,14 +14,13 @@ const AboutPublisher = ({ data }) => {
           <Img fluid={patricia} style={{ width: '100%' }} />
           <P>PAPER SHOE PRESS</P>
           <P>
-            Paper Shoe Press, proud publisher of Vanishing History, Ruins in
-            Virginia, and subsequent volumes by Henry J. Browne, was founded in
-            2011 by Patricia Castelli. Her company is named for a simple idea.
-            The stories, ideas and images within books transport us to places
-            near and far that we would not get to know any other way. They make
-            us laugh, reflect and see and think about the world around us
-            differently. We make books (traditionally at least) with paper, and
-            we wear shoes on any kind of journey. They both take us places.
+            Paper Shoe Press, proud publisher of My Dog is a What?, was founded
+            in 2011 by Patricia Castelli. Her company is named for a simple
+            idea. The stories, ideas and images within books transport us to
+            places near and far that we would not get to know any other way.
+            They make us laugh, reflect and see and think about the world around
+            us differently. We make books (traditionally at least) with paper,
+            and we wear shoes on any kind of journey. They both take us places.
             Patricia takes great pleasure in putting well-crafted stories and
             striking and intriguing images in the hands of happy readers. She is
             also the author of The Story of Keswick Hall (2011, second printing
