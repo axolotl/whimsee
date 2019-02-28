@@ -11,7 +11,7 @@ const AboutPublisher = ({ data }) => {
     <Layout>
       <TextWrapper>
         <TextSection>
-          <Img fluid={patricia} style={{ width: '100%' }} />
+          <Img fluid={patricia} style={{ width: '100%', margin: '1.5rem 0' }} />
           <P>PAPER SHOE PRESS</P>
           <P>
             Paper Shoe Press, proud publisher of My Dog is a What?, was founded
