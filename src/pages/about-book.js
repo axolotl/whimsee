@@ -8,33 +8,55 @@ const AboutBook = () => (
     <TextWrapper>
       <TextSection>
         <P>
-          My Dog is a What?, originated with an idea for a witty, Lively and
-          unique children’s book that will entertain young ones and parents
-          alike! It is a book that not only promotes a child’s imagination but
-          also incorporates many basic learning concepts in a comical form.
+          At first there was a friendship between two teachers of Early
+          Childhood Education.
+        </P>
+
+        <P>The friendship is strong and longstanding.</P>
+
+        <P>
+          Then there was an idea for a lively, unique, interactive, entertaining
+          children’s book for all ages.
+        </P>
+
+        <P>The idea grew.</P>
+
+        <P>At last there was My Dog is a WHAT?</P>
+
+        <P>
+          This engaging book tickles a child’s imagination using many basic
+          learning concepts, including:
         </P>
         <ul>
           <LI>
-            The different colored borders and matching tabs teach color/rainbow
-            recognition, matching and memory
+            The different colored pages and matching tabs teach color/rainbow
+            recognition, matching and memory.
           </LI>
           <LI>
-            The dogs’ names provide not only humor but teach word recognition,
-            syllabic awareness, and that reading moves from left to right,
+            The dogs’ names created by flipping the pages provide not only humor
+            but teach word recognition, syllabic awareness, and that reading
+            moves from left to right.
           </LI>
           <LI>
             The use of the tabs and turning of the pages, help with fine motor
-            skills
+            skills and strengthening pincer grip.
           </LI>
           <LI>
             The ‘Did You Know?’ page teaches a fact about each breed of dog
-            represented
+            represented.
           </LI>
           <LI>
-            The overall action of matching and mismatching the dog pictures and
-            their breed names is stimulating and so much fun!
+            The overall action of matching and silly-matching the dog pictures
+            and their breed names is stimulating and so much fun!
           </LI>
         </ul>
+        <P>
+          Leslie Browne and Beverley Crosby, having spent countless hours
+          enjoying books with young children, are convinced that time spent with
+          a child and a book is the most memorable of all playtime activities.
+          When it’s a book that promotes both laughter and learning, what could
+          be more rewarding?
+        </P>
       </TextSection>
     </TextWrapper>
   </Layout>
