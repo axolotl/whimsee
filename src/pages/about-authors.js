@@ -63,14 +63,14 @@ export default AboutAuthors
 
 export const authorsQuery = graphql`
   query authorsQuery {
-    beverly: file(relativePath: { eq: "Beverley.jpeg" }) {
+    beverly: file(relativePath: { eq: "authorpage-beverly.JPG" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    leslie: file(relativePath: { eq: "Leslie.jpg" }) {
+    leslie: file(relativePath: { eq: "authorpage-leslie.JPG" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
