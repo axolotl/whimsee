@@ -35,6 +35,10 @@ injectGlobal`
     flex-direction: column;
     margin: -2px 0;
   }
+
+  b {
+    font-weight: bold;
+  }
 `
 
 const Layout = ({ children }) => (
