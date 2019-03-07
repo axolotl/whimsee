@@ -14,7 +14,7 @@ const AboutPublisher = ({ data }) => {
           <Img fluid={patricia} style={{ width: '100%', margin: '1.5rem 0' }} />
           <P>PAPER SHOE PRESS</P>
           <P>
-            Paper Shoe Press, proud publisher of My Dog is a What?, was founded
+            Paper Shoe Press, proud publisher of My Dog is a WHAT?, was founded
             in 2011 by Patricia Castelli. Her company is named for a simple
             idea. The stories, ideas and images within books transport us to
             places near and far that we would not get to know any other way.
