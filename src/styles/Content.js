@@ -15,7 +15,8 @@ export const TextWrapper = styled.div`
 
 export const TextSection = styled.div`
   max-width: 700px;
-  line-height: 3rem;
+  line-height: 3.5rem;
+  font-size: 1.9rem;
 `
 export const TextSectionSide = styled.div`
   max-width: 400px;
