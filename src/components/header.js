@@ -16,6 +16,7 @@ import MobileMenu from './mobile-menu'
 class Header extends Component {
   state = {
     hover: false,
+    aboutClicked: false,
     isMobile: false,
     displayMobileMenu: false,
   }
@@ -24,10 +25,12 @@ class Header extends Component {
   componentDidMount = () => {
     this.checkViewportWidth()
     window.addEventListener('resize', this.checkViewportWidth)
+    window.addEventListener('mousedown', this.discardAboutClick)
   }
 
   componentWillUnmount = () => {
     window.removeEventListener('resize', this.checkViewportWidth)
+    window.removeEventListener('mousedown', this.discardAboutClick)
   }
 
   checkViewportWidth = () => {
@@ -40,6 +43,14 @@ class Header extends Component {
 
   handleMouseLeave = event => {
     this.setState({ hover: false })
+  }
+
+  handleAboutClick = () => {
+    this.setState({ aboutClicked: true })
+  }
+
+  discardAboutClick = () => {
+    this.setState({ aboutClicked: false })
   }
 
   lauchMobileMenu = () => {
@@ -57,8 +68,9 @@ class Header extends Component {
       handleMouseLeave,
       lauchMobileMenu,
       resetMobileMenu,
+      handleAboutClick,
     } = this
-    const { hover, isMobile, displayMobileMenu } = this.state
+    const { hover, isMobile, displayMobileMenu, aboutClicked } = this.state
 
     if (displayMobileMenu) {
       return <MobileMenu resetMobileMenu={resetMobileMenu} />
@@ -83,20 +95,22 @@ class Header extends Component {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <HeaderDropdownParentText>About</HeaderDropdownParentText>
+              <HeaderDropdownParentText onClick={handleAboutClick}>
+                About
+              </HeaderDropdownParentText>
 
-              <LinkPopdown hover={hover}>
-                <PopdownItem hover={hover}>
+              <LinkPopdown hover={aboutClicked || hover}>
+                <PopdownItem hover={aboutClicked || hover}>
                   <HeaderLinkText to="/about-book">
                     About the Book
                   </HeaderLinkText>
                 </PopdownItem>
-                <PopdownItem hover={hover}>
+                <PopdownItem hover={aboutClicked || hover}>
                   <HeaderLinkText to="/about-authors">
                     About the Authors
                   </HeaderLinkText>
                 </PopdownItem>
-                <PopdownItem hover={hover}>
+                <PopdownItem hover={aboutClicked || hover}>
                   <HeaderLinkText to="/about-publisher">
                     About the Publisher
                   </HeaderLinkText>
