@@ -13,6 +13,10 @@ export const HeaderContainer = styled.div`
   @media (max-width: 750px) {
     flex-direction: column;
   }
+
+  @media (max-width: 600px) {
+    flex-direction: row;
+  }
 `
 
 export const LinksContainer = styled.div`
@@ -135,4 +139,11 @@ export const PopdownItem = styled.li`
       opacity: 1;
       visibility: visible;
     `};
+`
+export const SVGBox = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
 `
