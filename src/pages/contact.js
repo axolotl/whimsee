@@ -16,6 +16,8 @@ const Contact = () => (
         <Header>Questions? Comments? We are here for you!</Header>
         <TextBox>
           <TextWrapper>
+            <Text>Follow us on Facebook and Instagram</Text>
+            <div style={{ height: '20px' }} />
             <Text>PO Box 179.</Text>
             <Text>Batesville, Va 22924</Text>
             <Text>
