@@ -31,18 +31,15 @@ const IndexPage = ({ data }) => {
         >
           <Img fluid={splash} style={{ width: '100%' }} />
           <CTAButtonText to="/demo">
-            <CTAButton color="#1485CC">Look inside!</CTAButton>
+            <CTAButton restrictOnMobile color="#1485CC">
+              Look inside!
+            </CTAButton>
           </CTAButtonText>
           <CTAButtonText to="/purchase">
             <CTAButton style={{ marginTop: '0px' }}>Purchase now</CTAButton>
           </CTAButtonText>
         </div>
         <TextSectionSide style={{ marginTop: '10px' }}>
-          {/* deprecate header */}
-          {/*<CTAHeader>
-            Introducing this awsome new book ... continue intro copy
-          </CTAHeader>*/}
-
           <Img fluid={title} style={{ width: '100%' }} />
 
           <CTABody>

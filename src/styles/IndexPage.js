@@ -29,6 +29,11 @@ export const CTAButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   background: ${({ color }) => color || '#E11541'};
+
+  @media (max-width: 600px) {
+    display: ${({ restrictOnMobile }) => restrictOnMobile && 'none'};
+  }
+
   color: white;
   transition: all 0.3s ease;
   width: 225px;
