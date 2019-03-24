@@ -15,7 +15,6 @@ module.exports = {
         display: 'minimal-ui',
       },
     },
-    'gatsby-plugin-offline',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
