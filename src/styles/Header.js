@@ -10,13 +10,13 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 750px) {
-    flex-direction: column;
-  }
+  // @media (max-width: 750px) {
+  //   flex-direction: column;
+  // }
 
-  @media (max-width: 600px) {
-    flex-direction: row;
-  }
+  // @media (max-width: 600px) {
+  //   flex-direction: row;
+  // }
 `
 
 export const LinksContainer = styled.div`

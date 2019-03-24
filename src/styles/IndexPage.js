@@ -30,7 +30,7 @@ export const CTAButton = styled.button`
   cursor: pointer;
   background: ${({ color }) => color || '#E11541'};
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     display: ${({ restrictOnMobile }) => restrictOnMobile && 'none'};
   }
 

@@ -34,7 +34,7 @@ class Header extends Component {
   }
 
   checkViewportWidth = () => {
-    this.setState({ isMobile: window.innerWidth < 600 })
+    this.setState({ isMobile: window.innerWidth < 768 })
   }
 
   handleMouseEnter = event => {
