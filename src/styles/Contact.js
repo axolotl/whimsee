@@ -15,7 +15,17 @@ export const InnerWrapper = styled.div`
 export const Text = styled.p`
   font-size: 2rem;
   font-family: 'Oxygen', sans-serif;
-  color: #363636;
+  // color: #363636;
+
+  color: ${({ color }) => {
+    switch (color) {
+      case 'green':
+        return '#3BD44A'
+      default:
+        return '#363636'
+    }
+  }};
+
   margin: 2rem 0 1.5rem;
 `
 
@@ -26,7 +36,9 @@ export const TextBox = styled.div`
   margin-top: 2rem;
 `
 
-export const TextWrapper = styled.div``
+export const TextWrapper = styled.div`
+  max-width: 700px;
+`
 
 export const Header = styled.h2`
   font-family: 'Henny Penny', cursive;

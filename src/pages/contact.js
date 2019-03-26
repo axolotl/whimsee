@@ -23,6 +23,11 @@ const Contact = () => (
             <Text>
               <a href="mailto:Info@whimseebooks.com">Info@whimseebooks.com</a>{' '}
             </Text>
+            {/* <div style={{ height: '20px' }} />
+            <Text color={'green'}>
+              It's the things we play with and the people who help us play that
+              make a great difference in our lives.” ― Fred Rogers{' '}
+            </Text> */}
           </TextWrapper>
         </TextBox>
       </InnerWrapper>
