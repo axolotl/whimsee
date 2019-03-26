@@ -5,7 +5,6 @@ import { P } from '../styles/Text'
 import { TextSection, TextWrapper } from '../styles/Content'
 
 const AboutPublisher = ({ data }) => {
-  console.log(data)
   const { fluid: patricia } = data.file.childImageSharp
   return (
     <Layout>
