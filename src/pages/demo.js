@@ -47,24 +47,29 @@ class Demo extends Component {
   render() {
     // grab all images
     const { edges } = this.props.data.allImageSharp
+
+    console.log(this.props.data.allImageSharp)
     // parse out only only the onces we need
     const images = edges.filter(
       image =>
         !image.node.sizes.src.match('cover') &&
         image.node.sizes.src.match('whimsee')
     )
+    console.log(images)
     const fronts = []
     const backs = []
 
     // sort images into the correct categories based on filename
-    images.forEach(
-      image =>
-        parseInt(image.node.sizes.src.match(/-[0-9]{2}-/)[0].slice(1, 3)) %
-        2 ===
-        0
-          ? backs.push(image)
-          : fronts.push(image)
-    )
+    images.forEach(image => {
+      let imageNum = parseInt(
+        image.node.sizes.src.match(/-[0-9]{2}./)[0].slice(1, 3)
+      )
+      if (imageNum % 2 === 0) {
+        backs.push(image)
+      } else {
+        fronts.push(image)
+      }
+    })
 
     const { calcIndex, setSlide } = this
     const { frontIndex, backIndex, slide, direction, animatedSide } = this.state
