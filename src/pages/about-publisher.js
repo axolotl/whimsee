@@ -3,6 +3,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import { P } from '../styles/Text'
 import { TextSection, TextWrapper } from '../styles/Content'
+import { graphql } from 'gatsby'
 
 const AboutPublisher = ({ data }) => {
   const { fluid: patricia } = data.file.childImageSharp

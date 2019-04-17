@@ -7,6 +7,7 @@ import {
   DemoButton,
   DemoImg,
 } from '../styles/Demo'
+import { graphql } from 'gatsby'
 
 class Demo extends Component {
   state = {
@@ -65,7 +66,7 @@ class Demo extends Component {
           : fronts.push(image)
     )
 
-    const { swapPicture, calcIndex, setSlide } = this
+    const { calcIndex, setSlide } = this
     const { frontIndex, backIndex, slide, direction, animatedSide } = this.state
 
     return (

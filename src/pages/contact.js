@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 import {
@@ -10,9 +10,10 @@ import {
   TextBox,
   TextWrapper,
 } from '../styles/Contact'
+import { graphql } from 'gatsby'
 
 const Contact = ({ data }) => {
-  const { fluid: aspca } = data.file.childImageSharp
+  // const { fluid: aspca } = data.file.childImageSharp
   return (
     <Layout>
       <Wrapper>
@@ -62,7 +63,6 @@ export const contactQuery = graphql`
     }
   }
 `
-
 const A = styled.a``
 
 export default Contact

@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
-import { PageSpacer, ContentContainer } from '../styles/Content'
+import { ContentContainer } from '../styles/Content'
 
 import Footer from './footer'
 

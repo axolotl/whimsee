@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import { graphql } from 'gatsby'
 
 function Gallery({ data }) {
   const images = data.allImageSharp.edges.filter(image =>

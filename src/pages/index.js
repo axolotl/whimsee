@@ -1,16 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import { P } from '../styles/Text'
 import { FlexWrapper, TextSectionSide } from '../styles/Content'
-import {
-  IndexImg,
-  CTAHeader,
-  CTABody,
-  CTAButton,
-  CTAButtonText,
-} from '../styles/IndexPage'
+import { CTABody, CTAButton, CTAButtonText } from '../styles/IndexPage'
+import { graphql } from 'gatsby'
 
 const IndexPage = ({ data }) => {
   const { fluid: splash } = data.splash.childImageSharp
