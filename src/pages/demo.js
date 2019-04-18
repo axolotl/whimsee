@@ -48,14 +48,12 @@ class Demo extends Component {
     // grab all images
     const { edges } = this.props.data.allImageSharp
 
-    console.log(this.props.data.allImageSharp)
     // parse out only only the onces we need
     const images = edges.filter(
       image =>
         !image.node.sizes.src.match('cover') &&
         image.node.sizes.src.match('whimsee')
     )
-    console.log(images)
     const fronts = []
     const backs = []
 
