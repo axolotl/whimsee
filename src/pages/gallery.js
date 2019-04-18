@@ -5,15 +5,15 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 
 function Gallery({ data }) {
-  const images = data.allImageSharp.edges.filter(image =>
-    image.node.sizes.src.match('gallery')
+  const images = data.allPrismicGalleryimage.nodes.map(
+    node => node.data.image.localFile.childImageSharp.sizes
   )
 
   return (
     <Layout>
       <GalleryContainer>
         {images.map((image, i) => (
-          <Img key={i} sizes={image.node.sizes} />
+          <Img key={i} sizes={image} />
         ))}
       </GalleryContainer>
     </Layout>
@@ -37,13 +37,25 @@ const GalleryContainer = styled.div`
 
 export const galleryQuery = graphql`
   query galleryQuery {
-    allImageSharp {
-      edges {
-        node {
-          id
-          sizes(maxWidth: 550) {
-            sizes
-            ...GatsbyImageSharpSizes_noBase64
+    allPrismicGalleryimage {
+      nodes {
+        data {
+          title {
+            html
+            text
+          }
+          image {
+            alt
+            copyright
+            url
+            localFile {
+              childImageSharp {
+                sizes(maxWidth: 550) {
+                  sizes
+                  ...GatsbyImageSharpSizes_noBase64
+                }
+              }
+            }
           }
         }
       }
