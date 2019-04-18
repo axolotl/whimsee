@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import { P } from '../styles/Text'
 import { TextSection, TextWrapper } from '../styles/Content'
 import { PicsContainer } from '../styles/Authors'
+import { graphql } from 'gatsby'
 
 const AboutAuthors = ({ data }) => {
   const { fluid: beverly } = data.beverly.childImageSharp

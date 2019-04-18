@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: 'Whimsee BOOKS™',
@@ -24,6 +28,14 @@ module.exports = {
       options: {
         name: `content`,
         path: `${__dirname}/static/img/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `whimsee-books`,
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
   ],
