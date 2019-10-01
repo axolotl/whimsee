@@ -29,8 +29,8 @@ class Demo extends Component {
     current + direction < 0
       ? 2
       : current + direction > 2
-        ? 0
-        : current + direction
+      ? 0
+      : current + direction
 
   setSlide = (side, direction) => {
     this.setState({
