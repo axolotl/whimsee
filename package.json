@@ -5,7 +5,7 @@
   "author": "Samuel Machat (axolotl)",
   "dependencies": {
     "babel-plugin-styled-components": "^1.7.1",
-    "gatsby": "^2.0.0",
+    "gatsby": "^5.3.3",
     "gatsby-image": "^2.0.8",
     "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-offline": "^2.0.5",
@@ -13,7 +13,7 @@
     "gatsby-plugin-sharp": "^2.0.5",
     "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-source-filesystem": "^2.0.1",
-    "gatsby-source-prismic": "^2.3.0-alpha.3",
+    "gatsby-source-prismic": "^2.3.0-previews.12",
     "gatsby-transformer-sharp": "^2.1.1",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
